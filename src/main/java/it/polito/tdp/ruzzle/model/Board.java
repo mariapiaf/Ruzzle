@@ -13,6 +13,8 @@ import javafx.beans.property.StringProperty;
  * @author Fulvio
  *
  */
+
+// modella la matrice
 public class Board {
 	private List<Pos> positions;
 	private Map<Pos, StringProperty> cells;

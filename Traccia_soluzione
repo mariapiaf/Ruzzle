@@ -1,0 +1,45 @@
+2 APPROCCI
+1: POTREI PER OGNI PAROLA DEL DIZIONARIO, VEDERE SE E' PRESENTE NELLA
+GRIGLIA ED EVENTUALMENTE AGGIUNGERLA ALLA SOLUZION
+INVECE DI TROVARE TUTTE LE PAROLE, LO SCOMPONGO IN PIU' SOTTOPROBLEMI 
+IN QUESTO MODO
+IL PROCESSO RICORSIVO STA NEL CAPIRE SE LA PAROLA E' PRESENTE O MENO
+2: PROVARE TUTTI I POSSIBILI PERCORSI SULLA GRIGLIA DI RUZZLE
+PARTO DALLA PRIMA CELLA, SE ESISTE UNA PAROLA CON QWUELLA LETTERA LA METTO DA PARTE
+ALTRIMENTI LA SCARTO
+
+APPROCCIO 1:
+PROBLEMA (input): 
+	-Stringa da riconoscere 'parola'
+	-Contenuto della Board
+	-Punto da cui cominciare la ricerca della parola
+	(es se cerco pippo, cerco una posizione possibile da cui
+	iniziare che è una p, se poi non c'è una lettera così,
+	allora non posso trovare la parola)
+	
+SOLUZIONE PARZIALE:
+	-la parte iniziale della parola, quella che ho già riconosciuto
+	-elenco delle posizioni in cui si trovano le lettere già riconosciute
+
+SOLUZIONE TOTALE:
+	-parola completamente riconosciuta
+	-elenco delle posizioni in cui si trovano le lettere della parola
+	finale già riconosciuta
+	
+LIVELLO DELLA RICORSIONE:
+	-numero di caratteri già riconosciuti
+	
+CONDIZIONI DI TERMINAZIONE:
+	-livello = lunghezza della parola
+	-se viene trovata la soluzione -> interrompere subito la ricerca
+	(es se ho trovato pippo, non faccio backtracking togliendo la o, ma mi fermo)
+	
+AVVIO DELLA RICORSIOME:
+	-livello = 1 perchè la lettera la troviamo manualmente
+	parto da una posizione che contiene la prima lettera della parola
+	
+STRUTTURE DATI CHE CI SERVONO:
+	-String da riconoscere = 'parola'
+	-Livello
+	-List<Pos> 'percorso' corrispondente alla sequenza di caselle percorse
+	
